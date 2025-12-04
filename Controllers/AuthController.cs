@@ -69,8 +69,8 @@ namespace AuthSystemDemo.Controllers
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             //Create token
-            var token = new JwtSecurityToken(issuer: configuration.GetValue<string>("AppSettings:issuer"),
-                                             audience: configuration.GetValue<string>("AppSettings:audience"),
+            var token = new JwtSecurityToken(issuer: configuration.GetValue<string>("AppSettings:Issuer"),
+                                             audience: configuration.GetValue<string>("AppSettings:Audience"),
                                              claims: claims,
                                              expires :DateTime.UtcNow.AddDays(1),
                                              signingCredentials:credentials);
